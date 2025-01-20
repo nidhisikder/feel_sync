@@ -56,27 +56,18 @@ class _ChatScreenState extends State<ChatScreen> {
 
 
 
-  void handleSendMessage() {
+  void handleSendMessage() async {
     String userMessage = messageController.text.trim().toLowerCase();
     if (userMessage.isNotEmpty) {
       
-      setState(() {
+      setState(() async {
         // Add user's message
         messages.add({"sender": "user", "text": userMessage});
         
-       //}
-       _sendInputToModel(userMessage);
-                   // Send input to Flask
-        //What I want to do is the usermessage will be first checked into this responsedictionary,
-        ///if the usermessage is not here then it will be sent the model
-        ///there whatever will be the highest emotion count
-        ///that emotion's list will be checked
-        ///and from the list randomly any message will be replied and this will go on.
-        
-        
-    
-        
-      messages.add({"sender": "bot", "text": prediction.toString()});
+        await _sendInputToModel(userMessage);
+        messages.add({"sender": "bot", "text": prediction!});
+
+
       
       });
       messageController.clear(); // Clear input field
