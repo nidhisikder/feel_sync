@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 
 import 'package:flutter/material.dart';
 
@@ -20,10 +22,10 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final List<Map<String, String>> messages = []; // To store chat messages
+  List<Map<String, dynamic>> messages = [];
   final TextEditingController messageController = TextEditingController();
   
-  String? _prediction; // To display the prediction result
+  String? prediction; // To display the prediction result
 
   Future<void> _sendInputToModel(String input) async {
     const String flaskUrl = 'http://127.0.0.1:5000/predict'; // Flask API endpoint
@@ -37,27 +39,22 @@ class _ChatScreenState extends State<ChatScreen> {
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData = jsonDecode(response.body);
         setState(() {
-          _prediction = responseData['prediction']; // Extract prediction
+          prediction = responseData['prediction'];
+          print(prediction); // Extract prediction
         });
       } else {
         setState(() {
-          _prediction = 'Error: ${response.statusCode}';
+          prediction = 'Error: ${response.statusCode}';
         });
       }
     } catch (e) {
       setState(() {
-        _prediction = 'Error: $e';
+        prediction = 'Error: $e';
       });
     }
   }
 
-  // Dictionary with predefined responses
-  final Map<String, String> responseDictionary = {
-    "hello": "Hi there! How can I help you?",
-    "hi":"Heyy buddy Whatsup!!!",
-    "how are you": "I am cool, How are you friend?",
-    "bye": "Goodbye! Have a great day!"
-  };
+
 
   void handleSendMessage() {
     String userMessage = messageController.text.trim().toLowerCase();
@@ -77,17 +74,9 @@ class _ChatScreenState extends State<ChatScreen> {
         ///and from the list randomly any message will be replied and this will go on.
         
         
-        String botResponse= "";
-        if(responseDictionary.containsKey(userMessage)){      
-        String? botResponse =
-            responseDictionary[userMessage];
-        messages.add({"sender": "bot", "text": botResponse});
-        }
+    
         
-        if(_prediction != null && botResponse==""){
-          botResponse=_prediction;
-        }
-      messages.add({"sender": "bot", "text": botResponse});
+      messages.add({"sender": "bot", "text": prediction.toString()});
       
       });
       messageController.clear(); // Clear input field

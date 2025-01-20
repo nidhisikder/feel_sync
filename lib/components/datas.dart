@@ -22,11 +22,6 @@ class ChatScreen{
     "Let’s pause for a minute so we can approach this with a clear mind.",
   ];
 
-  switch(emo){
-    case("joy"):{
-      response
-
-    }
+ 
   }
 
-}
