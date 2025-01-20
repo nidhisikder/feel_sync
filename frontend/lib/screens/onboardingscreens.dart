@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreens extends StatefulWidget {
+  const OnboardingScreens({super.key});
+
   @override
   _OnboardingScreensState createState() => _OnboardingScreensState();
 }
@@ -49,7 +51,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                 SmoothPageIndicator(
                   controller: _controller,
                   count: 4,
-                  effect: ExpandingDotsEffect(
+                  effect: const ExpandingDotsEffect(
                     activeDotColor: Colors.blue,
                     dotColor: Colors.grey,
                     dotHeight: 8,
@@ -68,7 +70,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                     Navigator.pushReplacementNamed(context, '/welcome');
                   },

@@ -3,6 +3,8 @@ import 'package:feel_sync/screens/onboardingscreens.dart';
 import 'dart:async';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MoodTracker extends StatelessWidget {
-  const MoodTracker({Key? key}) : super(key: key);
+  const MoodTracker({super.key});
 
   @override
   Widget build(BuildContext context) {

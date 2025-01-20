@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 
 
 class ChatApp extends StatelessWidget {
+  const ChatApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,6 +19,8 @@ class ChatApp extends StatelessWidget {
 }
 
 class ChatScreen extends StatefulWidget {
+  const ChatScreen({super.key});
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -78,7 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ChatBot'),
+        title: const Text('ChatBot'),
         backgroundColor: Colors.teal,
       ),
       body: Column(
@@ -93,8 +97,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 return Align(
                   alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: isUser ? Colors.blue : Colors.grey[300],
                       borderRadius: BorderRadius.circular(10),
@@ -115,16 +119,16 @@ class _ChatScreenState extends State<ChatScreen> {
                 Expanded(
                   child: TextField(
                     controller: messageController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Type your message...",
                       border: OutlineInputBorder(),
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed: handleSendMessage,
-                  child: Text("Send"),
+                  child: const Text("Send"),
                 ),
               ],
             ),

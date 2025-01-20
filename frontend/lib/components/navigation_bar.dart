@@ -3,7 +3,7 @@ import 'package:feel_sync/screens/chattiing.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatefulWidget {
-  const CustomNavigationBar({Key? key}) : super(key: key);
+  const CustomNavigationBar({super.key});
 
   @override
   _CustomNavigationBarState createState() => _CustomNavigationBarState();
@@ -20,9 +20,9 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
                 // Handle login() {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => JournalPage()),
+                MaterialPageRoute(builder: (context) => const JournalPage()),
             );
-    };
+    } {}
     case(3):{
       Navigator.push(
                 context,
@@ -30,7 +30,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             );
 
 
-    };
+    } {}
       }
     }
     );
@@ -76,8 +76,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: _selectedIndex == 0
-                    ? Icon(Icons.home, key: ValueKey("home_active"), color: Colors.blue.shade700)
-                    : Icon(Icons.home_outlined, key: ValueKey("home_inactive"), color: Colors.grey),
+                    ? Icon(Icons.home, key: const ValueKey("home_active"), color: Colors.blue.shade700)
+                    : const Icon(Icons.home_outlined, key: ValueKey("home_inactive"), color: Colors.grey),
               ),
               label: 'Home',
             ),
@@ -85,8 +85,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: _selectedIndex == 1
-                    ? Icon(Icons.bar_chart, key: ValueKey("insights_active"), color: Colors.blue.shade700)
-                    : Icon(Icons.bar_chart_outlined, key: ValueKey("insights_inactive"), color: Colors.grey),
+                    ? Icon(Icons.bar_chart, key: const ValueKey("insights_active"), color: Colors.blue.shade700)
+                    : const Icon(Icons.bar_chart_outlined, key: ValueKey("insights_inactive"), color: Colors.grey),
               ),
               label: 'Insights',
             ),
@@ -94,8 +94,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: _selectedIndex == 2
-                    ? Icon(Icons.book, key: ValueKey("journal_active"), color: Colors.blue.shade700)
-                    : Icon(Icons.book_outlined, key: ValueKey("journal_inactive"), color: Colors.grey),
+                    ? Icon(Icons.book, key: const ValueKey("journal_active"), color: Colors.blue.shade700)
+                    : const Icon(Icons.book_outlined, key: ValueKey("journal_inactive"), color: Colors.grey),
                   
               ),
               label: 'Journal',
@@ -104,8 +104,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: _selectedIndex == 3
-                    ? Icon(Icons.chat_bubble, key: ValueKey("chat_active"), color: Colors.blue.shade700)
-                    : Icon(Icons.chat_bubble_outline_outlined, key: ValueKey("chat_inactive"), color: Colors.grey),
+                    ? Icon(Icons.chat_bubble, key: const ValueKey("chat_active"), color: Colors.blue.shade700)
+                    : const Icon(Icons.chat_bubble_outline_outlined, key: ValueKey("chat_inactive"), color: Colors.grey),
                     
               ),
               label: 'Chat',
@@ -114,8 +114,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: _selectedIndex == 4
-                    ? Icon(Icons.person, key: ValueKey("profile_active"), color: Colors.blue.shade700)
-                    : Icon(Icons.person_outline, key: ValueKey("profile_inactive"), color: Colors.grey),
+                    ? Icon(Icons.person, key: const ValueKey("profile_active"), color: Colors.blue.shade700)
+                    : const Icon(Icons.person_outline, key: ValueKey("profile_inactive"), color: Colors.grey),
                     
               ),
               label: 'Profile',

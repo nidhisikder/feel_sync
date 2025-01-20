@@ -106,9 +106,9 @@ class _HomePage extends State<HomePage> {
 
 
                   const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const MoodTracker(),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: MoodTracker(),
                   ), // Calendar or chart for daily mood tracking
                   const SizedBox(height: 20),
                   //const SuggestionsPanel(), // AI-powered suggestions panel
@@ -126,7 +126,7 @@ class _HomePage extends State<HomePage> {
         backgroundColor: const Color.fromARGB(255, 166, 32, 199),
         child: const Icon(Icons.crisis_alert_sharp, color: Colors.white),
       ),
-      bottomNavigationBar: CustomNavigationBar(
+      bottomNavigationBar: const CustomNavigationBar(
         
       ),
       ); // Modular navigation bar

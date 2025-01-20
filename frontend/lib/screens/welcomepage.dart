@@ -3,6 +3,8 @@ import 'package:feel_sync/screens/login.dart';
 import 'dart:async';
 
 class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
+
   @override
   _WelcomePageState createState() => _WelcomePageState();
 }
